@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>chatter|app</title>
 
+    
     <!-- #4 embed the #roboto #font. This needs to go above your css -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 
@@ -12,20 +13,22 @@
     <link rel="stylesheet" href="css/style.css" />
 
 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
     <!-- #4 #one #page -->
     <div id="channels">
-        <h1>
+        <h1 id="left-app-bar">
             <!-- #3 #channels #moocus the talkative duck-->
             <img src="http://ip.lfe.mw.tum.de/sections/moocus.png" alt="Moocus, the chatty duck!" style="height: 56px;">
-            <span>chatter|app</span>
+            chatter|app
         </h1>
 
         <!-- #3 #channels #list is much better, than headlines or paragraphs... -->
         <ul>
-            <li>#Yummy
+            <li onclick="switchChannel('#Yummy')">#Yummy
                 <!-- #3 #channels #favorite this is not starred -->
                 <span class="channel-meta">
                             <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
@@ -35,7 +38,7 @@
             </li>
 
             <!-- #4 #channel is #highlighted -->
-            <li class="selected">
+            <li class="selected" onclick="switchChannel('#SevenContinents')">
                 #SevenContinents
                 <!-- #3 #channels #favorite this is starred -->
                 <span class="channel-meta">
@@ -44,7 +47,7 @@
             <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
             </span>
             </li>
-            <li>#KillerApp
+            <li onclick="switchChannel('#KillerApp')">#KillerApp
                 <!-- #3 #channels #favorite this is not starred -->
                 <span class="channel-meta">
                             <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
@@ -52,7 +55,7 @@
             <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
             </span>
             </li>
-            <li>#FirstPersonOnMars
+            <li onclick="switchChannel('#FirstPersonOnMars')">#FirstPersonOnMars
                 <!-- #3 #channels #favorite this is starred -->
                 <span class="channel-meta">
                             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
@@ -60,7 +63,7 @@
             <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
             </span>
             </li>
-            <li>#Octoberfest
+            <li onclick="switchChannel('#Octoberfest')">#Octoberfest
                 <!-- #3 #channels #favorite this is not starred -->
                 <span class="channel-meta">
                             <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
@@ -68,119 +71,24 @@
             <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
             </span>
             </li>
-            <li>#Yummy
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-
-            <!-- #4 #channel is #highlighted -->
-            <li class="selected">
-                #SevenContinents
-                <!-- #3 #channels #favorite this is starred -->
-                
-                <span class="channel-meta">
-                    <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#KillerApp
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#FirstPersonOnMars
-                <!-- #3 #channels #favorite this is starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#Octoberfest
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#Yummy
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-
-            <!-- #4 #channel is #highlighted -->
-            <li class="selected">
-                #SevenContinents
-                <!-- #3 #channels #favorite this is starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#KillerApp
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#FirstPersonOnMars
-                <!-- #3 #channels #favorite this is starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#Octoberfest
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-            <li>#Yummy
-                <!-- #3 #channels #favorite this is not starred -->
-                <span class="channel-meta">
-                            <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-
-            <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
-            </span>
-            </li>
-
-
+            
         </ul>
 
         <!-- #3 #tab-bar #container -->
         <!-- #4 #sweat #tab-bar -->
         <div id="tab-bar">
             <!-- #4 #tab-bar selected channel should be #highlighted -->
-            <button class="selected">
+            <button class="selected" id="New" onclick="selectTab(New)">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/lightbulb-o.png" alt="Bulb">
             New
         </button>
-            <button>
+            <button id="trending"  onclick="selectTab(trending)">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/fire.png" alt="Hot">
             Trending
         </button>
-            <button>
+            <button id="favorites"  onclick="selectTab(favorites)">
             <!-- #3 #tab-bar #images -->
             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Star">
             Favorites
@@ -191,11 +99,10 @@
     <!-- #4 #one #page -->
     <div id="chat">
         <h1>
-            <span class="chatbartitle">#SevenContinents
-        <small>by
-            <strong>cheeses.yard.applies</strong>
-        </small>
-            </span>
+            <span id="channel-name">#SevenContinents</span>
+        <!-- #6 #channels #location also needs an id -->
+        <small id="channel-location">by <strong>cheeses.yard.applies</strong></small>
+            <img id="channel-star" src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Star" onclick="star()">
         </h1>
 
         <div id="messages">
@@ -366,7 +273,7 @@
             </div>
         <div id="chat-bar">
             <!-- #6 #smile #show the menu on click -->
-            <button id="emojis-button" onclick="toggleEmojis()"><img src="http://ip.lfe.mw.tum.de/sections/smile-o.png" alt="Smiley"></button>
+            <button id="emojis-button" onclick="toggleEmojis();"><img src="http://ip.lfe.mw.tum.de/sections/smile-o.png" alt="Smiley"></button>
             <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
         </div>
     </div>
